@@ -1,0 +1,84 @@
+<div class="mb-2 d-flex justify-content-between align-items-center" style="font-size: 15px;">
+
+                            <div class="position-relative align-items-center mt-2 mb-2 bg">
+                                <span class="position-absolute search"><i class="fa fa-search"></i></span>
+                                <input class="form-control w-100" style="padding-left:32px;" placeholder="Search by order#, name...">
+                            </div>
+
+                            <div class="px-2">
+
+                                <span>Filters <i class="fa fa-angle-down"></i></span>
+                                <i class="fa fa-ellipsis-h ms-3"></i>
+
+                            </div>
+
+                        </div>
+                        <div class="table-responsive">
+                        <table class="table table-responsive table-borderless text" style="font-size: 15px;">
+
+                          <thead>
+                            <tr class="bg">
+                              <th scope="col" width="5%"><input class="form-check-input" type="checkbox"></th>
+                              <th scope="col" width="5%">No</th>
+                              <th scope="col" width="10%">Tanggal</th>
+                              <th scope="col" width="20%">Perusahaan</th>
+                              <th scope="col" width="30%">Pesan</th>
+                              <th scope="col" width="10%">Status</th>
+                              <th scope="col" class="text-end" width="20%"><span>Aksi</span></th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                                <td>1</td>
+                                <td>15 Oct, 21</td>
+                                <td><img src="http://127.0.0.1:5500/ODC/foto/logo.png" width="25" class="mr-1">PT ApaAjaAda</td>
+                                <td>Selamat anda diterima!</td>
+                                <td><i class="fa fa-check-circle-o green"></i><span class="ml-1 ms-1">Dilihat</span></td>
+                                <td class="text-end"><a href="#"><button class="btn btn-primary pickImageBtn" type="button" id="save-profile">Lihat</button></a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                                <td>2</td>
+                                <td>12 Oct, 21</td>
+                                <td><img src="http://127.0.0.1:5500/ODC/foto/logo.png" width="25" class="mr-1">PT SatuDuaTiga</td>
+                                <td>Maaf lamaran anda kami tolak!</td>
+                                <td><i class="fa-regular fa-circle-xmark text-danger"></i><span class="ml-1 ms-1">Lihat</span></td>
+                                <td class="text-end"><a href="#"><button class="btn btn-primary pickImageBtn" type="button" id="save-profile">Lihat</button></a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                                <td>3</td>
+                                <td>9 Oct, 21</td>
+                                <td><img src="http://127.0.0.1:5500/ODC/foto/logo.png" width="25" class="mr-1">PT Bebas</td>
+                                <td>Bebas aja</td>
+                                <td><i class="fa-regular fa-circle-xmark text-danger"></i><span class="ml-1 ms-1">Lihat</span></td>
+                                <td class="text-end"><a href="#"><button class="btn btn-primary pickImageBtn" type="button" id="save-profile">Lihat</button></a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                                <td>4</td>
+                                <td>5 Oct, 21</td>
+                                <td><img src="http://127.0.0.1:5500/ODC/foto/logo.png" width="25" class="mr-1">PT Contoh</td>
+                                <td>cuman contoh</td>
+                                <td><i class="fa fa-check-circle-o green"></i><span class="ml-1 ms-1">Dilihat</span></td>
+                                <td class="text-end"><a href="#"><button class="btn btn-primary pickImageBtn" type="button" id="save-profile">Lihat</button></a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                                <td>5</td>
+                                <td>1 Oct, 21</td>
+                                <td><img src="http://127.0.0.1:5500/ODC/foto/logo.png" width="25" class="mr-1">PT Cape</td>
+                                <td>Terakhir</td>
+                                <td><i class="fa fa-check-circle-o green"></i><span class="ml-1 ms-1">Dilihat</span></td>
+                                <td class="text-end"><a href="#"><button class="btn btn-primary pickImageBtn" type="button" id="save-profile">Lihat</button></a></td>
+                            </tr>
+
+                        </tbody>
+                        </table>
+
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between px-3 mt-3" style="font-size: 15px;">
+                        <div class="d-flex justify-content-start mb-2"><span>Page</span><input class="ml-1 input-10 text-center" style="width: 50px;" type="number" value="1"> <span><span class="px-1">of</span>1</span></div>
+                        <div class="d-flex justify-content-end mb-2"> <span class="pe-1">Show</span> <input class="ml-1 mr-1 input-10 text-center" style="width: 50px;" type="number" value="5"> <span class="ps-2"><span class="pe-2">/</span>Page</span> </div>
+                    </div>

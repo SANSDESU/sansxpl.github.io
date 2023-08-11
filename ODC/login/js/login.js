@@ -36,9 +36,9 @@ function login(){
     const pass = document.getElementById('pass').value;
 
     if(email == 'admin@co.id' && pass == 'admin'){
-        window.location.href = "http://127.0.0.1:5500/ODC/admin";
+        window.location.href = "https://sansxpl.github.io/ODC/admin";
     }else if (email == 'siswa@co.id' && pass == 'siswa') {
-        window.location.href = "http://127.0.0.1:5500/ODC/user";
+        window.location.href = "https://sansxpl.github.io/ODC/user";
     }else if (email == 'industri@co.id' && pass == 'industri') {
         alert('industri');
     }else{

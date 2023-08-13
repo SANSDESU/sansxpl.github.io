@@ -35,11 +35,11 @@ function login(){
     const email = document.getElementById('email').value;
     const pass = document.getElementById('pass').value;
 
-    if(email == 'admin@co.id' && pass == 'admin'){
+    if(email == 'admin@soji' && pass == 'admin'){
         window.location.href = "https://sansxpl.github.io/ODC/admin";
-    }else if (email == 'siswa@co.id' && pass == 'siswa') {
+    }else if (email == 'siswa@soji' && pass == 'siswa') {
         window.location.href = "https://sansxpl.github.io/ODC/user";
-    }else if (email == 'industri@co.id' && pass == 'industri') {
+    }else if (email == 'industri@soji' && pass == 'industri') {
         alert('industri');
     }else{
         document.getElementById('invalid').style.display = 'block';

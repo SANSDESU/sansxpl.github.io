@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/efbc88a111.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    <script src="js/sweet-alert.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sweetalert-dark.css">
+    <title>Dashboard | BKK-SOJI</title>
+</head>
+
+<body>
+    <nav id="_sidebar" class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="https://sansxpl.github.io/ODC/foto/profil.png" alt="profile">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name" id="name-text">Surya Hadini</span>
+                    <span class="profession" id="role">User</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box" style="display: none;">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search..." id="search">
+                </li>
+
+
+                <li class="">
+                    <a href="#" onclick="menu('_dash', 'Dashboard');">
+                        <i class='bx bx-home-alt icon'></i>
+                        <span class="text nav-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="#" onclick="menu('_profile', 'Profil');">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text nav-text">Profil</span>
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="#" onclick="menu('_doc', 'Dokumen');">
+                        <i class='bx bx-file-blank icon'></i>
+                        <span class="text nav-text">Dokumen</span>
+                    </a>
+                </li>
+
+
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#" onclick="swal(16,'');">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text">
+            <div id="_dashboard-container">
+                <span class="font-weight-bold" id="title-text">Dashboard</span>
+                <div id="_dash" style="display: block;">
+                    <div class="container mt-3 mb-3">
+                        <div class="row">
+
+                            <div class="col-sm-5 mb-3 mr-3">
+                                <div class="row">
+                                    <div class="col-12 rounded bg mb-3 pb-3">
+                                        <!--div class="d-flex align-items-center justify-content-between border-bottom">
+                                            profile
+                                        </div-->
+                                        <div class="d-flex flex-column align-items-center text-center">
+                                            <img class="rounded-circle mt-3" height="30%" width="30%"
+                                                src="https://sansxpl.github.io/ODC/foto/profil.png">
+                                            <div class="text logo-text">
+                                                <span class="name font-weight-bold" id="name-text">Surya Hadini</span>
+                                            </div>
+                                            <span class="text text-muted" style="font-size: 15px;" id="bio-text">Lorem
+                                                ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                                incididunt ut labore et dolore magna aliqua.</span>
+                                            <div class="d-flex">
+                                                <div class="input-text">
+                                                    <input style="padding-left: 10px;" class="tag-bg text-muted"
+                                                        type="text" id="social_input"
+                                                        value="https://bkksoji.site/profil/surya">
+                                                    <i class="fa fa-copy" id="copy" onclick="copy_link();"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 rounded bg pb-2">
+                                        <!--div class="d-flex align-items-center justify-content-between border-bottom">
+                                            social
+                                        </div-->
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <i class="bx bxl-whatsapp text-muted" aria-hidden="true"><span
+                                                    class="font-weight-bold text-muted"
+                                                    style="margin-left: 5px; font-size: 15px;">WhatsApp</span></i>
+                                            <a class="a" href="#" style="font-size: 15px;">wa.me/blablabla</a>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <i class="bx bx-link text-muted" aria-hidden="true"><span
+                                                    class="font-weight-bold text-muted"
+                                                    style="margin-left: 5px; font-size: 15px;">Website</span></i>
+                                            <a class="a" href="#" style="font-size: 15px;">website-link</a>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <i class="bx bxl-github text-muted" aria-hidden="true"><span
+                                                    class="font-weight-bold text-muted"
+                                                    style="margin-left: 5px; font-size: 15px;">Github</span></i>
+                                            <a class="a" href="#" style="font-size: 15px;">github-link</a>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <i class="bx bxl-linkedin-square text-muted" aria-hidden="true"><span
+                                                    class="font-weight-bold text-muted"
+                                                    style="margin-left: 5px; font-size: 15px;">Linkedin</span></i>
+                                            <a class="a" href="#" style="font-size: 15px;">linkedin-link</a>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <i class="bx bxl-instagram text-muted" aria-hidden="true"><span
+                                                    class="font-weight-bold text-muted"
+                                                    style="margin-left: 5px; font-size: 15px;">Instagram</span></i>
+                                            <a class="a" href="#" style="font-size: 15px;">instagram-link</a>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <i class="bx bxl-youtube text-muted" aria-hidden="true"><span
+                                                    class="font-weight-bold text-muted"
+                                                    style="margin-left: 5px; font-size: 15px;">Youtube</span></i>
+                                            <a class="a" href="#" style="font-size: 15px;">youtube-link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-12 rounded bg mb-3 pb-3">
+                                        <!--div class="d-flex align-items-center justify-content-between border-bottom">
+                                            detail
+                                        </div-->
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted" style="font-size: 15px;">Nama
+                                                Lengkap</span>
+                                            <span class="font-weight-normal text-muted" style="font-size: 15px;">Surya
+                                                Hadini S</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted" style="font-size: 15px;">Tanggal
+                                                Lahir</span>
+                                            <span class="font-weight-normal text-muted" style="font-size: 15px;">16
+                                                Juli</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted"
+                                                style="font-size: 15px;">Umur</span>
+                                            <span class="font-weight-normal text-muted" style="font-size: 15px;">18
+                                                Tahun</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted" style="font-size: 15px;">Asal
+                                                Sekolah</span>
+                                            <span class="font-weight-normal text-muted" style="font-size: 15px;">SMKN 1
+                                                Soreang</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted" style="font-size: 15px;">Tahun
+                                                Lulus</span>
+                                            <span class="font-weight-normal text-muted"
+                                                style="font-size: 15px;">2024</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted" style="font-size: 15px;">Status
+                                                Pekerjaan</span>
+                                            <span class="font-weight-normal text-muted" style="font-size: 15px;">Belum
+                                                Bekerja</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted"
+                                                style="font-size: 15px;">Alamat</span>
+                                            <span class="font-weight-normal text-muted" style="font-size: 15px;">Di
+                                                Rumah</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted" style="font-size: 15px;">No
+                                                Handphone</span>
+                                            <span class="font-weight-normal text-muted"
+                                                style="font-size: 15px;">081234567890</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted"
+                                                style="font-size: 15px;">Email</span>
+                                            <span class="font-weight-normal text-muted"
+                                                style="font-size: 15px;">localhost@mail.co.id</span>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-12 rounded bg pb-2">
+                                        <!--div class="d-flex align-items-center justify-content-between border-bottom">
+                                            Skill
+                                        </div-->
+                                        <div class="d-flex align-items-center justify-content-between border-bottom py-2"
+                                            style="font-size: 15px;">
+                                            <span class="font-weight-bold text-muted">Skill</span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="bg align-items-start" style="padding: 10px; ">
+                                                <!--height: max-content; margin-left: 20px; margin-right: 20px;-->
+                                                <span class="tag">Programming</span>
+                                                <span class="tag">Developer</span>
+                                                <span class="tag">App Developer</span>
+                                                <span class="tag">Cyber Security</span>
+                                                <span class="tag">Design</span>
+                                                <span class="tag">Editor</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="_profile" style="display: none;">
+                    <div class="container rounded mt-3 mb-3 bg">
+                        <div class="row">
+                            <div class="col-md-3  bg">
+                                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                                    <input id="imageInput" type="file" style="visibility: hidden;"
+                                        onchange="document.getElementById('pfp').src = window.URL.createObjectURL(this.files[0])" />
+                                    <img id="pfp" class="rounded-circle mt-3" height="70%" width="70%"
+                                        src="https://sansxpl.github.io/ODC/foto/profil.png">
+                                    <!--i class='bx bxs-pencil topright' onclick="pickImage();" style="cursor: pointer;"></i-->
+                                    <button class="btn btn-primary pickImageBtn mb-5" type="button"
+                                        onclick="pickImage();" id="save-profile">Ubah Foto Profil</button>
+                                    <!--span class="font-weight-bold" id="name-text">Surya</span-->
+                                    <label class="labels mb-2">Bio [max:150 char]</label>
+                                    <textarea class="form-control hide-scroll h-100" id="bio" placeholder="Masukkan Bio"
+                                        rows="7" cols="50" maxlength="150" style="resize:none">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </textarea>
+
+                                </div>
+                            </div>
+                            <div class="col-md-5 bg">
+                                <div class="p-3 py-5">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="text-right">Pengaturan Profil</h4>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6"><label class="labels">Nama Depan</label><input type="text"
+                                                class="form-control" placeholder="Nama Depan" value="" id="name"></div>
+                                        <div class="col-md-6"><label class="labels">Nama Belakang</label><input
+                                                type="text" class="form-control" value="" placeholder="Nama Belakang"
+                                                id="surname"></div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6"><label class="labels">Tanggal lahir</label>
+                                            <input type="date" class="form-control" id="date" style=" float:left;"
+                                                onchange="">
+                                        </div>
+                                        <div class="col-md-6"><label class="labels">Umur</label><input type="number"
+                                                class="form-control" value="" placeholder="umur" id="age"></div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6"><label class="labels">Tahun Lulus</label><input
+                                                type="number" class="form-control" value=""
+                                                placeholder="Masukkan Tahun Lulus" id="graduate"></div>
+                                        <div class="col-md-6"><label class="labels">Status Pekerjaan</label>
+                                            <select class="form-control" placeholder="Status" id="status">
+                                                <option value="belum">Belum Bekerja</option>
+                                                <option value="bekerja">Bekerja</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-md-6"><label class="labels">Nomor Handphone</label><input
+                                                type="number" class="form-control" value="" placeholder="Masukkan No HP"
+                                                id="mobile-number"></div>
+                                        <div class="col-md-6"><label class="labels">Email</label><input type="text"
+                                                class="form-control" value="" placeholder="Masukkan Email" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-12"><label class="labels">Alamat</label><input type="text"
+                                                class="form-control" placeholder="Masukkan Alamat Tempat Tinggal"
+                                                value="" id="address"></div>
+                                        <div class="col-md-12"><label class="labels">Asal Sekolah</label><input
+                                                type="text" class="form-control" placeholder="Masukkan Asal Sekolah"
+                                                value="" id="address"></div>
+
+                                    </div>
+                                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button"
+                                            type="button" onclick="swal(7,'Perubahan Telah Disimpan');"
+                                            id="save-profile">Simpan Perubahan</button></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 bg">
+                                <div class="p-3 py-5 w-100">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="text-right">Keahlian</h4>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="labels">Tag Sesuai Keahlian</label>
+                                        <div class="rounded w-100 h-100 bg align-items-start">
+                                            <!--height: max-content; margin-left: 20px; margin-right: 20px;-->
+                                            <select id="choices-multiple-remove-button" placeholder="Pilih Keahlian"
+                                                multiple>
+                                                <option value="programming">Programming</option>
+                                                <option value="cooking">Cooking</option>
+                                                <option value="networking">Networking</option>
+                                                <option value="analysis">Analysis</option>
+                                                <option value="developer">Developer</option>
+                                                <option value="welding">Welding</option>
+                                                <option value="mechanical-engineering">Mechanical Engineering</option>
+                                                <option value="software-engineering">Software Engineering</option>
+                                                <option value="engineering">Engineering</option>
+                                                <option value="housekeeper">Housekeeper</option>
+                                                <option value="design">Design</option>
+                                                <option value="Editor">Editor</option>
+                                                <option value="cyber-security">Cyber Security</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="_doc" style="display: none;">
+                    <div class="container rounded mt-3 mb-3 bg">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="container" id="list_content">
+                                <div class="mb-2 d-flex justify-content-between align-items-center"
+                                    style="font-size: 15px;">
+
+                                    <div class="position-relative align-items-center mt-2 mb-2 bg">
+                                        <span class="position-absolute search"><i class="fa fa-search"></i></span>
+                                        <input class="form-control w-100" style="padding-left:32px;"
+                                            placeholder="Search by order#, name...">
+                                    </div>
+
+                                    <div class="px-2">
+                                        <span>Filters <i class="fa fa-angle-down"></i></span>
+                                        <i class="fa fa-ellipsis-h ms-3"></i>
+                                    </div>
+
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-responsive table-borderless text"
+                                        style="font-size: 15px;">
+                                        <thead>
+                                            <tr class="bg">
+                                                <th scope="col" width="5%">No</th>
+                                                <th scope="col" width="20%">Nama Dokumen</th>
+                                                <th scope="col" width="20%">Tanggal Upload</th>
+                                                <th scope="col" class="text-end" width="20%"><span>Aksi</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Sertifikat 1</td>
+                                                <td>9 Agustus, 2023</td>
+                                                <td class="text-end">
+                                                    <button class="btn btn-primary pickImageBtn blue-filter" type="button"
+                                                        id="view-doc"
+                                                        onclick="lihat(1)">Lihat</button>
+                                                    <button class="btn btn-primary pickImageBtn" type="button"
+                                                        id="edit-doc">Edit</button>
+                                                    <button class="btn btn-primary pickImageBtn red-filter" type="button"
+                                                        id="delete-doc" onclick="getCurrentIndex(this,'delete')">Hapus</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Sertifikat 2</td>
+                                                <td>10 Agustus, 2023</td>
+                                                <td class="text-end">
+                                                    <button class="btn btn-primary pickImageBtn blue-filter" type="button"
+                                                        id="view-doc"
+                                                        onclick="lihat(2)">Lihat</button>
+                                                    <button class="btn btn-primary pickImageBtn" type="button"
+                                                        id="edit-doc">Edit</button>
+                                                    <button class="btn btn-primary pickImageBtn red-filter" type="button"
+                                                        id="delete-doc" onclick="getCurrentIndex(this,'delete')">Hapus</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Sertifikat 3</td>
+                                                <td>11 Agustus, 2023</td>
+                                                <td class="text-end">
+                                                    <button class="btn btn-primary pickImageBtn blue-filter" type="button"
+                                                        id="view-doc"
+                                                        onclick="lihat(3)">Lihat</button>
+                                                    <button class="btn btn-primary pickImageBtn" type="button"
+                                                        id="edit-doc">Edit</button>
+                                                    <button class="btn btn-primary pickImageBtn red-filter" type="button"
+                                                        id="delete-doc" onclick="getCurrentIndex(this,'delete')">Hapus</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div id="docView" class="modal modal-opacity">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <span class="_close pointer" onclick="closeModal()">&times;</span>
+                                        <div class="modal-content">
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <div id="numText" class="numbertext rounded"></div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <div class="docSlides">
+
+                                                        <img class="imgs rounded"
+                                                        src="https://sansxpl.github.io/ODC/foto/serti1.jpg">
+
+                                                </div>
+                                                <div class="docSlides">
+
+                                                        <img class="imgs rounded"
+                                                        src="https://sansxpl.github.io/ODC/foto/serti2.jpg">
+
+                                                </div>
+                                                <div class="docSlides">
+
+                                                    <img class="imgs rounded"
+                                                    src="https://sansxpl.github.io/ODC/foto/serti3.jpg">
+
+                                            </div>
+                                            </div>
+
+                                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                                            <div class="d-flex justify-content-center align-items-center mt-2 md-2">
+                                                <p id="caption" style="color:#ccc"></p>
+                                            </div>
+
+                                            <div class="row overflow-auto hide-scroll" style="background-color: transparent;">
+                                                <div class="col" style="height: 100px; width: 200px; max-width: 200px;">
+                                                    <img class="demo pointer rounded w-100 h-100"
+                                                        src="https://sansxpl.github.io/ODC/foto/serti1.jpg"
+                                                        onclick="currentSlide(1)" alt="Serti 1">
+                                                </div>
+                                                <div class="col" style="height: 100px; width: 200px; max-width: 200px;">
+                                                    <img class="demo pointer rounded w-100 h-100"
+                                                        src="https://sansxpl.github.io/ODC/foto/serti2.jpg"
+                                                        onclick="currentSlide(2)" alt="Serti 2">
+                                                </div>
+                                                <div class="col" style="height: 100px; width: 200px; max-width: 200px;">
+                                                    <img class="demo pointer rounded w-100 h-100"
+                                                        src="https://sansxpl.github.io/ODC/foto/serti3.jpg"
+                                                        onclick="currentSlide(3)" alt="Serti 3">
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/index.js"></script>
+    <script src="js/device-check.js"></script>
+</body>
+
+</html>

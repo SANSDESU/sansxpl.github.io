@@ -1,0 +1,63 @@
+<div class="d-flex justify-content-start align-items-center border-bottom mb-5">
+                            <nav class="navbar navbar-expand-lg mb-2">
+                                <div class="container-fluid">
+                                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                    <div class="navbar-nav ml-auto">
+                                      <span id="viewdoc" class="nav-link active font-weight-bold text-muted pointer" aria-current="page" onclick="active(1)">Dokumen</span>
+                                      <span id="listdoc" class="nav-link font-weight-bold text-muted pointer" onclick="active(2)">List Dokumen</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </nav>
+                        </div>
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+  color: var(--text-color);
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  font-size: 14px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .active {
+  border-bottom: 4px solid var(--text-color);
+}
+
+.logo {
+  margin-bottom: 7px !important;
+}
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0px !important;
+}
+
+
+function active(no){
+    viewdoc = document.getElementById("viewdoc");
+    listdoc = document.getElementById("listdoc");
+    doccontent = document.getElementById("doc_content");
+    listcontent = document.getElementById("list_content");
+
+    listcontent.style.display = 'none';
+    doccontent.style.display = 'none';
+    listdoc.classList.remove("active");
+    viewdoc.classList.remove("active");
+
+    if (no == 1){
+        viewdoc.classList.add("active");
+        doccontent.style.display = 'block';
+    } else {
+        listdoc.classList.add("active");
+        listcontent.style.display = 'block';
+    }
+}
